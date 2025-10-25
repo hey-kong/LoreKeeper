@@ -1,0 +1,30 @@
+# LoreKeeper configuration (TOML)
+
+[models]
+embedding_model = "Qwen/Qwen3-Embedding-0.6B"
+reranker_model = "BAAI/bge-reranker-v2-m3"
+llm_model = "Qwen/Qwen3-4B-Instruct-2507"
+device = "cuda:1"
+
+[cache]
+cache_type = "basic"
+capacity = 1000
+similarity_threshold = 0.85
+
+[retrieval]
+top_k = 20
+rerank_top_k = 8
+
+[chunk]
+chunk_size = 512
+chunk_overlap = 10
+
+[paths]
+docs_dir = "./data/hotpotqa/documents"
+persist_dir = "./storage/index/hotpotqa"
+questions_path = "./data/hotpotqa/questions/questions.jsonl"
+answers_path = "./data/hotpotqa/answers/answers.jsonl"
+results_path = "./results.jsonl"
+
+[benchmark]
+num_questions = 10  # 0 means all

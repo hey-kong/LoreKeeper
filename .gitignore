@@ -40,3 +40,9 @@ chunk_kvcache/*
 
 .vscode/
 .idea/
+
+# Local settings and data
+config.toml
+storage/*
+results.jsonl
+data/*
